@@ -175,22 +175,26 @@ function handleOnClick() {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  .wrapper {
-    // width: 100%;
-    // padding: 40px;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 32px;
-  }
+    .wrapper {
+      // width: 100%;
+      // padding: 40px;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 32px;
+      @media (max-width: 800px) {
+        padding: 0;
+        color: red;
+      }
+    }
 
-  // ── Description ─────────────────────────────────────────
-  .description {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 400px;
+    // ── Description ─────────────────────────────────────────
+    .description {
+      // font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: $text-color;
+      max-width: 400px;
+    }
   }
 
   // ── Divider ─────────────────────────────────────────────

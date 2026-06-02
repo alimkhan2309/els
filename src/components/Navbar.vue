@@ -86,6 +86,7 @@ onUnmounted(() => {
     display: flex;
     gap: 30px;
     align-items: center;
+    text-transform: uppercase;
 
     @media (max-width: 768px) {
       position: fixed;
