@@ -1,0 +1,27 @@
+[
+  {
+    "id": "graph",
+    "icon": "icon-graph.png",
+    "text": "Results-driven wellness experiences in the world's most awarded clinic"
+  },
+  {
+    "id": "hourglass",
+    "icon": "icon-hourglass.png",
+    "text": "90 years of science, innovation and research in longevity"
+  },
+  {
+    "id": "globe",
+    "icon": "icon-globe.png",
+    "text": "Genetic & Epigenetic testings for tailor-made programs"
+  },
+  {
+    "id": "wholistic",
+    "icon": "icon-wholistic.png",
+    "text": "A unique holistic approach, paired with proprietary genetic and epigenetic"
+  },
+  {
+    "id": "group",
+    "icon": "icon-group.png",
+    "text": "An unrivalled assembly of experts – over 50 leading medical specialists"
+  }
+]

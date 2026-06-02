@@ -1,0 +1,102 @@
+[
+  {
+    "id": "injectables",
+    "category": "Injectables",
+    "titleLine1": "Precision",
+    "titleLine2": "Redefined",
+    "description": "Our expert injectors blend medical science with aesthetic artistry — delivering natural-looking results tailored to your unique facial anatomy.",
+    "image": "/images/service-injectables.png",
+    "imagePosition": "left",
+    "services": [
+      { "name": "Botox (Full Face / 3 zones)", "price": "From 1,600 AED" },
+      { "name": "Botox (Per Unit)", "price": "From 45 AED" },
+      { "name": "Dermal Fillers (Juvederm/Restylane - 1ml)", "price": "From 1,600 AED" },
+      { "name": "Profhilo (Skin Hydration - 2ml)", "price": "From 1,500 AED" },
+      { "name": "Lip Filler (Russian Lips / Natural)", "price": "From 1,700 AED" }
+    ],
+    "ctaLabel": "Book Your Program",
+    "ctaLink": "/book"
+  },
+  {
+    "id": "facial-tech",
+    "category": "Facial Tech",
+    "titleLine1": "Clinical",
+    "titleLine2": "Facial Tech",
+    "description": "Our holistic approach to health and wellness combines evidence-based medicine with cutting-edge technology for visible, lasting skin transformation.",
+    "image": "/images/service-facial.png",
+    "imagePosition": "right",
+    "services": [
+      { "name": "Hydrafacial Platinum (Cleanse + Peel + Hydrate)", "price": "From 850 AED" },
+      { "name": "Oxygeneo 3-in-1 Super Facial", "price": "From 650 AED" },
+      { "name": "Carbon Laser Peel (Hollywood Glow)", "price": "From 600 AED" },
+      { "name": "Morpheus8 (RF Microneedling - Face & Neck)", "price": "From 2,500 AED" }
+    ],
+    "ctaLabel": "Book Your Program",
+    "ctaLink": "/book"
+  },
+  {
+    "id": "laser-hair-removal",
+    "category": "Laser Hair Removal",
+    "titleLine1": "Effortless",
+    "titleLine2": "Smoothness",
+    "description": "State-of-the-art laser technology delivers permanent hair reduction with precision — safe for all skin types, performed by DHA-licensed specialists.",
+    "image": "/images/service-laser.png",
+    "imagePosition": "left",
+    "services": [
+      { "name": "Full Body (Female)", "price": "From 1,200 AED" },
+      { "name": "Full Body (Male)", "price": "From 1,800 AED" },
+      { "name": "Bikini & Underarms", "price": "From 450 AED" },
+      { "name": "Full Face", "price": "From 350 AED" }
+    ],
+    "note": "25% discount on purchase of a 6-session package.",
+    "ctaLabel": "Book Your Program",
+    "ctaLink": "/book"
+  },
+  {
+    "id": "prp-wellness",
+    "category": "PRP & Wellness",
+    "titleLine1": "Restore &",
+    "titleLine2": "Revitalise",
+    "description": "Harness your body's own regenerative power. Our PRP and IV wellness protocols are designed to rejuvenate from within — skin, scalp, and cellular health.",
+    "image": "/images/service-prp.png",
+    "imagePosition": "right",
+    "services": [
+      { "name": "PRP Therapy (Face Rejuvenation)", "price": "From 900 AED" },
+      { "name": "PRP for Hair Loss (Scalp)", "price": "From 1,100 AED" },
+      { "name": "IV Vitamin Drips (Energy / Glow / Immunity)", "price": "From 600 AED" }
+    ],
+    "ctaLabel": "Book Your Program",
+    "ctaLink": "/book"
+  },
+  {
+    "id": "body-sculpting",
+    "category": "Body Sculpting",
+    "titleLine1": "Sculpt Your",
+    "titleLine2": "Ideal Form",
+    "description": "Non-invasive body contouring powered by electromagnetic muscle stimulation — build, tone, and transform without surgery or downtime.",
+    "image": "/images/service-body.jpg",
+    "imagePosition": "left",
+    "services": [
+      { "name": "Embosculpt (1 session - 30 min)", "price": "From 900 AED" },
+      { "name": "Body Transformation Package (10 sessions)", "price": "From 7,500 AED" }
+    ],
+    "ctaLabel": "Book Your Program",
+    "ctaLink": "/book"
+  },
+  {
+    "id": "consultations",
+    "category": "Consultations",
+    "titleLine1": "Your Skin,",
+    "titleLine2": "Understood",
+    "description": "Every great result begins with listening. Meet our DHA-licensed dermatologists for a personalised assessment — supported by 3D Visia skin analysis technology.",
+    "image": "/images/service-consult.png",
+    "imagePosition": "right",
+    "services": [
+      { "name": "Initial Consultation with Dermatologist", "price": "350 AED*" },
+      { "name": "3D Skin Analysis (Visia)", "price": "250 AED" }
+    ],
+    "note": "*Complimentary when a procedure is performed on the same day.",
+    "ctaLabel": "Book a Consultation",
+    "ctaLink": "/book"
+  }
+]

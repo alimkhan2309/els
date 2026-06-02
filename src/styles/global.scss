@@ -1,0 +1,143 @@
+@use './variables' as *;
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap');
+// Global reset and base styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Red Hat Display', sans-serif;
+  background: $body-bg;
+  color: $text-color;
+  // line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 52px;
+}
+
+section {
+  width: 100%;
+  height: fit-content;
+  height: 100vh;
+  padding: 60px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: 800px) {
+    padding: 40px 20px;
+  }
+  @media (max-width: 500px) {
+    padding: 40px 14px;
+  }
+}
+button {
+  background: $body-bg;
+  color: $text-color;
+  border: 1px solid $text-color;
+  padding: 20px;
+  // border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: color.adjust($primary-color, $lightness: -16%);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.reveal-wrapper:not(.reveal-active) {
+  .text-header h1 {
+    opacity: 0;
+  }
+  .text-description p {
+    opacity: 0;
+  }
+  .tag-label {
+    opacity: 0;
+  }
+}
+.reveal-active {
+  .text-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: $title;
+      font-weight: 400;
+      line-height: 1.25;
+      font-family: 'Red Hat Display', sans-serif;
+    }
+    & h1:first-child {
+      text-align: left;
+      animation-delay: 0s;
+      animation: fadeInSlideRight 0.9s ease-in-out both;
+    }
+    & h1:last-child {
+      text-align: right;
+      font-style: italic;
+      animation: fadeInSlideLeft 0.7s ease-in-out both;
+      animation-delay: 0.2s;
+    }
+  }
+  .text-description {
+    p {
+      width: 100%;
+      text-align: center;
+      animation: fadeInSlideUp 0.7s ease-in-out both;
+      animation-delay: 0.2s;
+    }
+  }
+  .tag-label {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $primary-color;
+    animation: fadeInSlideDown 0.7s ease-in-out both;
+    animation-delay: 0.25s;
+  }
+}
