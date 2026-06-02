@@ -7,7 +7,7 @@
       }"
     >
       <div class="feature-item__icon-wrap">
-        <img :src="`/img/${icon}`" :alt="text" class="feature-item__icon" />
+        <img :src="`${baseUrl}img/${icon}`" :alt="text" class="feature-item__icon" />
       </div>
       <p class="feature-item__text">{{ text }}</p>
     </div>
@@ -16,6 +16,9 @@
 
 <script setup>
 import AnimateOnScroll from './AnimateOnScroll.vue'
+
+const baseUrl = import.meta.env.BASE_URL
+
 defineProps({
   icon: {
     type: String,

@@ -71,7 +71,7 @@ const props = defineProps({
     required: true,
   },
 })
-
+const baseUrl = import.meta.env.BASE_URL // Ensures correct path resolution in production
 const sectionRef = ref(null)
 const imageRef = ref(null)
 let ctx = null
