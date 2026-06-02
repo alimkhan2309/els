@@ -6,7 +6,12 @@
   >
     <!-- Image side -->
     <div class="image">
-      <img class="service-image" :src="service.image" :alt="service.category" ref="imageRef" />
+      <img
+        class="service-image"
+        :src="`${baseUrl}${service.image}`"
+        :alt="service.category"
+        ref="imageRef"
+      />
     </div>
     <!-- Content side -->
     <div class="content">
