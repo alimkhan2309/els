@@ -7,22 +7,25 @@ import AnimateOnScroll from '../components/AnimateOnScroll.vue'
     <div class="container">
       <AnimateOnScroll>
         <div class="label-wrapper">
-          <p class="tag">Welcome to Clinique La Prairie</p>
+          <p class="tag">ELS PREMIER POLYCLINIC</p>
         </div>
       </AnimateOnScroll>
       <AnimateOnScroll>
         <div class="text-header">
-          <h1>THE WORLD’S MOST ADVANCED</h1>
-          <h1>LONGEVITY & WELLBEING POLYCLINIC</h1>
+          <h1>ADVANCED MEDICAL AESTHETICS</h1>
+          <h1>& CLINICAL REJUVENATION</h1>
         </div>
       </AnimateOnScroll>
       <AnimateOnScroll>
         <div class="text-description">
           <p>
-            Transformative longevity programs that combine advanced medicine, personalised wellness,
-            and cutting-edge technology.
+            A curated portfolio of world-class aesthetic treatments, advanced laser technologies,
+            and medical-grade wellness therapies.
           </p>
-          <p>and nature’s healing power to unearth the secret of lifelong vitality.</p>
+          <p>
+            Performed by licensed specialists to deliver flawless, natural results in an environment
+            of absolute safety and luxury.
+          </p>
         </div>
       </AnimateOnScroll>
       <button>BOOK YOUR PROGRAM</button>
@@ -40,6 +43,9 @@ import AnimateOnScroll from '../components/AnimateOnScroll.vue'
   // align-items: center;
   // justify-content: center;
   .container {
+    .text-header {
+      text-transform: uppercase;
+    }
     .label-wrapper {
       display: flex;
       justify-content: center;

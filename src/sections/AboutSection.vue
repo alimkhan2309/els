@@ -15,17 +15,18 @@ const features = featuresData
     <div class="container">
       <AnimateOnScroll>
         <div class="text-header">
-          <h1>STEP BY STEP,</h1>
-          <h1>UNFOLD YOUR POTENTIAL</h1>
+          <h1>WITH ABSOLUTE PRECISION,</h1>
+          <h1>UNLOCK YOUR FLAWLESS SELF</h1>
         </div>
       </AnimateOnScroll>
       <AnimateOnScroll>
         <div class="text-description">
-          <p>Our holistic approach to health and wellness combines evidence-based medicine with</p>
           <p>
-            unique wellbeing, nutrition and movement plans, in the highly stimulating environment of
+            Our advanced approach to medical aesthetics combines cutting-edge clinical technology
+            with
           </p>
-          <p>the Swiss Riviera, surrounded by the very best of nature.</p>
+          <p>bespoke skin and body protocols, delivered in an ultra-premium environment</p>
+          <p>dedicated to elevating your confidence and inner vitality.</p>
         </div>
       </AnimateOnScroll>
     </div>
