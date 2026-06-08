@@ -1,12 +1,17 @@
 <template>
   <nav class="navbar" :class="{ 'navbar--hidden': isHidden }">
-    <div class="navbar__logo" link="#home">
-      <img src="/img/ELS.svg" alt="Clinique La Prairie Logo" />
-    </div>
+    <router-link to="/" class="navbar__logo" @click="menuOpen = false">
+      <img src="/img/Logo-White.png" alt="Clinique La Prairie Logo" />
+    </router-link>
     <ul class="navbar__links" :class="{ active: menuOpen }">
       <li><a href="#about" @click="menuOpen = false">About</a></li>
       <li><a href="#services" @click="menuOpen = false">Services</a></li>
       <li><a href="#contact" @click="menuOpen = false">Contact</a></li>
+      <!-- <li><router-link to="/privacy" @click="menuOpen = false">Privacy Policy</router-link></li>
+      <li>
+        <router-link to="/terms" @click="menuOpen = false">Terms &amp; Conditions</router-link>
+      </li>
+      <li><router-link to="/disclaimer" @click="menuOpen = false">Disclaimer</router-link></li> -->
     </ul>
     <button class="navbar__burger" :class="{ active: menuOpen }" @click="menuOpen = !menuOpen">
       <span></span>
@@ -52,7 +57,7 @@ onUnmounted(() => {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 50px 120px;
   position: fixed;
@@ -73,11 +78,25 @@ onUnmounted(() => {
   }
 
   &__logo img {
-    height: 40px;
+    fill: white;
+    height: 120px;
     width: auto;
 
     @media (max-width: 480px) {
       height: 35px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+
+    @media (max-width: 480px) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
@@ -110,7 +129,7 @@ onUnmounted(() => {
 
       li {
         width: 100%;
-        padding: 15px 0;
+        padding: 32px 0;
         text-align: center;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 

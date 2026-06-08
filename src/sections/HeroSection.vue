@@ -7,7 +7,7 @@ import AnimateOnScroll from '../components/AnimateOnScroll.vue'
     <div class="container">
       <AnimateOnScroll>
         <div class="label-wrapper">
-          <p class="tag">ELS PREMIER POLYCLINIC</p>
+          <!-- <p class="tag">ELS PREMIER POLYCLINIC</p> -->
         </div>
       </AnimateOnScroll>
       <AnimateOnScroll>

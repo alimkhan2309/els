@@ -9,10 +9,21 @@ $font-family-base:
   sans-serif;
 $font-size-base: 16px;
 $body-bg: #020303;
-$text-color: #ffffff;
 $muted-color: #6b7280;
 $primary-color: #d1bb3a;
 $secondary-color: #9333ea;
+
+$warm-white: #faf7f5;
+$champaign: #f6d6b3;
+$dark: #1a0a0d;
+$rose: #d78779;
+$burgendy: #541b24;
+$off-white: #f4e5e1;
+$ashy: #524547;
+$night: #230c11;
+
+$text-color: $warm-white;
+
 $border-radius: 1rem;
 $max-content-width: 1100px;
 $title: clamp(2rem, 1.48rem + 2.21vw, 3.25rem);
