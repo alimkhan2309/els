@@ -152,7 +152,7 @@ function handleOnClick() {
       position: absolute;
       inset: 0;
       // Default (Content on Right): Dark on the right side
-      background: linear-gradient(to left, rgba(2, 3, 3, 0.75) 0%, transparent 60%);
+      background: linear-gradient(to left, $body-bg 40%, transparent 60%);
     }
   }
 

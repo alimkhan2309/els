@@ -8,9 +8,7 @@ $font-family-base:
   'Segoe UI',
   sans-serif;
 $font-size-base: 16px;
-$body-bg: #020303;
 $muted-color: #6b7280;
-$primary-color: #d1bb3a;
 $secondary-color: #9333ea;
 
 $warm-white: #faf7f5;
@@ -23,6 +21,10 @@ $ashy: #524547;
 $night: #230c11;
 
 $text-color: $warm-white;
+$body-bg: $dark;
+$primary-color: $rose;
+// $primary-color: #d1bb3a;
+// $body-bg: #020303;
 
 $border-radius: 1rem;
 $max-content-width: 1100px;

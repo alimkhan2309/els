@@ -59,7 +59,9 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 50px 120px;
+  // padding: 50px 120px;
+  padding: 20px 40px;
+  height: 120px;
   position: fixed;
   width: 100%;
   top: 0;

@@ -109,7 +109,9 @@ button {
       font-size: $title;
       font-weight: 400;
       line-height: 1.25;
-      font-family: 'Red Hat Display', sans-serif;
+      // Add Cormorant Garamond font
+      font-family: 'Cormorant Garamond', serif;
+      // font-family: 'Red Hat Display', sans-serif;
     }
     & h1:first-child {
       text-align: left;
