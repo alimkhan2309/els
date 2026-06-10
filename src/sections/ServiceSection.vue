@@ -118,7 +118,7 @@ function handleOnClick() {
   position: relative;
   justify-content: flex-end; // DEFAULT: Content on the RIGHT
   flex-direction: row;
-  height: 92vh;
+  height: 99vh;
   min-height: 620px;
   padding: 0;
   overflow: hidden;
@@ -134,7 +134,7 @@ function handleOnClick() {
     position: absolute; // Pulled out of flow to act as a full background
     inset: 0;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     z-index: 0;
 
     img {
@@ -168,7 +168,7 @@ function handleOnClick() {
     padding: 60px 40px;
   }
 
-  // ── Dashed inner box (matches screenshot) ──────────────
+  // ── Dashed inner box ──────────────
   .inner {
     width: 100%;
     max-width: 559px;
@@ -197,8 +197,7 @@ function handleOnClick() {
   .divider {
     width: 100%;
     height: 1px;
-    background: $champaign;
-    opacity: 0.5;
+    background: $rose;
   }
 
   // ── Service list ────────────────────────────────────────
@@ -221,12 +220,13 @@ function handleOnClick() {
 
   .list-name {
     color: rgba(255, 255, 255, 0.85);
+    color: $text-color;
   }
 
   .list-price {
     white-space: nowrap;
-    color: rgba(255, 255, 255, 0.55);
     font-size: 12px;
+    color: $off-white;
   }
 
   // ── Note ────────────────────────────────────────────────
@@ -285,7 +285,8 @@ function handleOnClick() {
 }
 
 .service-section--img-left .image::after {
-  // background: linear-gradient(to right, rgba(2, 3, 3, 0.75) 0%, transparent 60%);
+  // background: linear-gradient(to right, rgba(35, 12, 17, 1) 20%, transparent 100%);
+  background: linear-gradient(to right, rgba(35, 12, 17, 0.8) 20%, transparent 100%);
 }
 
 // ─── Animation (inherits from global .reveal-active) ─
@@ -305,7 +306,7 @@ function handleOnClick() {
   }
   .wrapper {
     width: 100%;
-    padding: 40px;
+    padding: 40px 0px;
     display: flex;
     flex-direction: column;
     gap: 32px;

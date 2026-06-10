@@ -41,12 +41,15 @@ const features = featuresData
 <style scoped lang="scss">
 @use '@/styles/variables' as *;
 .about-section {
-  // height: fit-content;
   gap: 133px;
-  background-color: $burgendy;
+  background-color: $dark;
   .container {
     max-width: 908px;
     justify-content: center;
+  }
+  .text-header {
+    color: $champaign;
+    text-transform: none;
   }
   .text-description {
     color: $off-white;

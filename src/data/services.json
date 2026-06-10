@@ -5,7 +5,7 @@
     "titleLine1": "Precision",
     "titleLine2": "Redefined",
     "description": "Our expert injectors blend medical science with aesthetic artistry — delivering natural-looking results tailored to your unique facial anatomy.",
-    "image": "/images/service-injectables.png",
+    "image": "/images/service-injectables3.png",
     "imagePosition": "left",
     "services": [
       { "name": "Botox (Full Face / 3 zones)", "price": "From 1,600 AED" },
@@ -23,7 +23,7 @@
     "titleLine1": "Clinical",
     "titleLine2": "Facial Tech",
     "description": "Our holistic approach to health and wellness combines evidence-based medicine with cutting-edge technology for visible, lasting skin transformation.",
-    "image": "/images/service-facial.png",
+    "image": "/images/service-facial.jpg",
     "imagePosition": "right",
     "services": [
       { "name": "Hydrafacial Platinum (Cleanse + Peel + Hydrate)", "price": "From 850 AED" },
@@ -40,7 +40,7 @@
     "titleLine1": "Effortless",
     "titleLine2": "Smoothness",
     "description": "State-of-the-art laser technology delivers permanent hair reduction with precision — safe for all skin types, performed by DHA-licensed specialists.",
-    "image": "/images/service-laser.png",
+    "image": "/images/service-laser5.jpg",
     "imagePosition": "left",
     "services": [
       { "name": "Full Body (Female)", "price": "From 1,200 AED" },
@@ -63,7 +63,7 @@
     "services": [
       { "name": "PRP Therapy (Face Rejuvenation)", "price": "From 900 AED" },
       { "name": "PRP for Hair Loss (Scalp)", "price": "From 1,100 AED" },
-      { "name": "IV Vitamin Drips (Energy / Glow / Immunity)", "price": "From 600 AED" }
+      { "name": "IV Vitamin Drips (Energy / Glow / Radiance)", "price": "From 600 AED" }
     ],
     "ctaLabel": "Book Your Program",
     "ctaLink": "/book"
@@ -89,7 +89,7 @@
     "titleLine1": "Your Skin,",
     "titleLine2": "Understood",
     "description": "Every great result begins with listening. Meet our DHA-licensed dermatologists for a personalised assessment — supported by 3D Visia skin analysis technology.",
-    "image": "/images/service-consult.png",
+    "image": "/images/service-consult4.png",
     "imagePosition": "right",
     "services": [
       { "name": "Initial Consultation with Dermatologist", "price": "350 AED*" },

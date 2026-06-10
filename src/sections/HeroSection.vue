@@ -41,13 +41,8 @@ import VideoBackground from '../components/VideoBackground.vue'
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/variables' as *;
 .hero-section {
-  // background: url('../assets/images/hero-bg.png') no-repeat center center;
-  // background-size: cover;
-  // height: 100vh;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   position: relative;
   .container {
     .text-header {
@@ -83,6 +78,7 @@ import VideoBackground from '../components/VideoBackground.vue'
       font-family: sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-size: 12px;
 
       /* The Fix: Lock the width */
       // flex: 0 1 800px;
@@ -93,16 +89,16 @@ import VideoBackground from '../components/VideoBackground.vue'
 
     &::before {
       content: '';
-      background-color: #fff;
-      height: 1px;
+      background-color: $champaign;
+      height: 0.5px;
       margin-right: 20px;
       width: 100%; /* Take up remaining space to the left */
     }
 
     &::after {
       content: '';
-      background-color: #fff;
-      height: 1px;
+      background-color: $champaign;
+      height: 0.5px;
       margin-left: 20px;
       width: 100%; /* Take up remaining space to the left */
     }
