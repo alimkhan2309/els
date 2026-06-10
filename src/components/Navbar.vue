@@ -66,7 +66,7 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: $night;
+  background-color: rgba(246, 214, 179, 0.05);
   // backdrop-filter: blur(10px);
   transition: transform 0.28s ease;
 

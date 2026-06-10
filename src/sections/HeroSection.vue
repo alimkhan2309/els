@@ -1,40 +1,43 @@
 <script setup>
 import AnimateOnScroll from '../components/AnimateOnScroll.vue'
+import VideoBackground from '../components/VideoBackground.vue'
 </script>
 
 <template>
-  <section class="hero-section" id="home">
-    <div class="container">
-      <AnimateOnScroll>
-        <div class="label-wrapper">
-          <!-- <p class="tag">ELS PREMIER POLYCLINIC</p> -->
-        </div>
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <div class="text-header">
-          <h1>ADVANCED MEDICAL AESTHETICS</h1>
-          <h1>& CLINICAL REJUVENATION</h1>
-        </div>
-      </AnimateOnScroll>
-      <AnimateOnScroll>
-        <div class="text-description">
-          <p>
-            A curated portfolio of world-class aesthetic treatments, advanced laser technologies,
-            and medical-grade wellness therapies.
-          </p>
-          <p>
-            Performed by licensed specialists to deliver flawless, natural results in an environment
-            of absolute safety and luxury.
-          </p>
-        </div>
-      </AnimateOnScroll>
-      <button>BOOK YOUR PROGRAM</button>
-    </div>
+  <VideoBackground>
+    <section class="hero-section" id="home">
+      <div class="container">
+        <AnimateOnScroll>
+          <div class="label-wrapper">
+            <!-- <p class="tag">ELS PREMIER POLYCLINIC</p> -->
+          </div>
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <div class="text-header">
+            <h1>ADVANCED MEDICAL AESTHETICS</h1>
+            <h1>& CLINICAL REJUVENATION</h1>
+          </div>
+        </AnimateOnScroll>
+        <AnimateOnScroll>
+          <div class="text-description">
+            <p>
+              A curated portfolio of world-class aesthetic treatments, advanced laser technologies,
+              and medical-grade wellness therapies.
+            </p>
+            <p>
+              Performed by licensed specialists to deliver flawless, natural results in an
+              environment of absolute safety and luxury.
+            </p>
+          </div>
+        </AnimateOnScroll>
+        <button>BOOK YOUR PROGRAM</button>
+      </div>
 
-    <div class="line-text-container">
-      <p>Slow time, capture energy, preserve youth</p>
-    </div>
-  </section>
+      <div class="line-text-container">
+        <p>Slow time, capture energy, preserve youth</p>
+      </div>
+    </section>
+  </VideoBackground>
 </template>
 
 <style lang="scss" scoped>
