@@ -23,6 +23,10 @@ useIntersectionObserver(
 </template>
 
 <style scoped>
+.target {
+  position: relative;
+}
+
 .reveal-wrapper {
   width: 100%;
 }

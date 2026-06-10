@@ -30,18 +30,22 @@ import AnimateOnScroll from '../components/AnimateOnScroll.vue'
       </AnimateOnScroll>
       <button>BOOK YOUR PROGRAM</button>
     </div>
+
+    <div class="line-text-container">
+      <p>Slow time, capture energy, preserve youth</p>
+    </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .hero-section {
-  height: 89vh;
   // background: url('../assets/images/hero-bg.png') no-repeat center center;
   // background-size: cover;
   // height: 100vh;
   // display: flex;
   // align-items: center;
   // justify-content: center;
+  position: relative;
   .container {
     .text-header {
       text-transform: uppercase;
@@ -58,6 +62,57 @@ import AnimateOnScroll from '../components/AnimateOnScroll.vue'
         letter-spacing: 0.18em;
         animation: fadeInSlideDown 0.7s ease-in-out both;
         animation-delay: 0.25s;
+      }
+    }
+  }
+
+  .line-text-container {
+    position: absolute; // Pulls out of flow
+    bottom: 3rem; // Adjust as needed
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures the whole group stays centered */
+
+    p {
+      /* Text Styles */
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      /* The Fix: Lock the width */
+      // flex: 0 1 800px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      // width: 332px;
+    }
+
+    &::before {
+      content: '';
+      background-color: #fff;
+      height: 1px;
+      margin-right: 20px;
+      width: 100%; /* Take up remaining space to the left */
+    }
+
+    &::after {
+      content: '';
+      background-color: #fff;
+      height: 1px;
+      margin-left: 20px;
+      width: 100%; /* Take up remaining space to the left */
+    }
+
+    @media (max-width: 800px) {
+      p {
+        flex-grow: 1; /* Allow text to grow and take up available space */
+        flex-shrink: 1; /* Allow text to shrink if necessary */
+        width: auto; /* Let the width be determined by content and flex properties */
+      }
+      &::before,
+      &::after {
+        margin: 0 10px;
       }
     }
   }

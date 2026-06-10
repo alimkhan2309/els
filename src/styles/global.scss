@@ -49,7 +49,6 @@ h1 {
 
 section {
   width: 100%;
-  height: fit-content;
   height: 100vh;
   padding: 60px 40px;
   display: flex;
@@ -74,6 +73,7 @@ button {
   transition: background-color 0.3s ease;
   &:hover {
     background: color.adjust($primary-color, $lightness: -16%);
+    border: 1px solid $warm-white;
   }
 }
 
@@ -127,6 +127,7 @@ button {
   }
   .text-description {
     p {
+      color: $off-white;
       width: 100%;
       text-align: center;
       animation: fadeInSlideUp 0.7s ease-in-out both;

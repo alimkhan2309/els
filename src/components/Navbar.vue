@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ 'navbar--hidden': isHidden }">
     <router-link to="/" class="navbar__logo" @click="menuOpen = false">
-      <img src="/img/Logo-White.png" alt="Clinique La Prairie Logo" />
+      <img src="/img/test2.png" alt="Clinique La Prairie Logo" />
     </router-link>
     <ul class="navbar__links" :class="{ active: menuOpen }">
       <li><a href="#about" @click="menuOpen = false">About</a></li>
@@ -59,16 +59,15 @@ onUnmounted(() => {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  // padding: 50px 120px;
-  padding: 20px 40px;
-  height: 120px;
+  padding: 50px 40px;
+  height: auto;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: $body-bg;
-  backdrop-filter: blur(10px);
+  background-color: $night;
+  // backdrop-filter: blur(10px);
   transition: transform 0.28s ease;
 
   @media (max-width: 768px) {
@@ -81,11 +80,11 @@ onUnmounted(() => {
 
   &__logo img {
     fill: white;
-    height: 120px;
+    height: 60px;
     width: auto;
 
     @media (max-width: 480px) {
-      height: 35px;
+      height: 80px;
     }
   }
 

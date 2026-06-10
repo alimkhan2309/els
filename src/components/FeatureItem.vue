@@ -40,7 +40,7 @@ defineProps({
 @use '@/styles/variables' as *;
 // ─── Tokens ────────────────────────────────────────────────
 
-$icon-size: 64px;
+$icon-size: 80px;
 $text-leading: 1.65;
 $transition:
   opacity 0.3s ease,
@@ -54,7 +54,8 @@ $transition:
   text-align: center;
   flex: 1 1 0;
   min-width: 160px;
-  max-width: 220px;
+  // max-width: 220px;
+  max-width: 280px;
   gap: 28px;
   transition: $transition;
 
@@ -71,14 +72,15 @@ $transition:
     align-items: center;
     justify-content: center;
     height: $icon-size + 16px; // consistent vertical rhythm across different icon heights
+    drop-shadow: 0px 4px 6px $rose;
   }
 
   &__icon {
     width: auto;
     height: $icon-size;
     object-fit: contain;
-    filter: brightness(0) invert(1); // forces white tint on any PNG
-    opacity: 0.9;
+    // filter: brightness(0) invert(1); // forces white tint on any PNG
+    // opacity: 0.9;
     transition: $transition;
   }
 

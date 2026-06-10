@@ -58,7 +58,7 @@
     "titleLine1": "Restore &",
     "titleLine2": "Revitalise",
     "description": "Harness your body's own regenerative power. Our PRP and IV wellness protocols are designed to rejuvenate from within — skin, scalp, and cellular health.",
-    "image": "/images/service-prp.png",
+    "image": "/images/service-prp10.png",
     "imagePosition": "right",
     "services": [
       { "name": "PRP Therapy (Face Rejuvenation)", "price": "From 900 AED" },
@@ -74,7 +74,7 @@
     "titleLine1": "Sculpt Your",
     "titleLine2": "Ideal Form",
     "description": "Non-invasive body contouring powered by electromagnetic muscle stimulation — build, tone, and transform without surgery or downtime.",
-    "image": "/images/service-body.jpg",
+    "image": "/images/service-body2.jpg",
     "imagePosition": "left",
     "services": [
       { "name": "Embosculpt (1 session - 30 min)", "price": "From 900 AED" },

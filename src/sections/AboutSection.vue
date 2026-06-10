@@ -7,11 +7,7 @@ const features = featuresData
 
 <template>
   <section class="about-section" id="about">
-    <AnimateOnScroll>
-      <div class="line-text-container">
-        <p>Slow time, capture energy, preserve youth</p>
-      </div>
-    </AnimateOnScroll>
+    <!-- <AnimateOnScroll> </AnimateOnScroll> -->
     <div class="container">
       <AnimateOnScroll>
         <div class="text-header">
@@ -43,18 +39,20 @@ const features = featuresData
 </template>
 
 <style scoped lang="scss">
+@use '@/styles/variables' as *;
 .about-section {
-  height: fit-content;
+  // height: fit-content;
   gap: 133px;
+  background-color: $burgendy;
   .container {
     max-width: 908px;
     justify-content: center;
   }
   .text-description {
+    color: $off-white;
     animation: fadeInUp 0.6s ease forwards;
   }
   .features-strip {
-    background-color: #0a0a0a;
     padding: 60px 40px;
 
     &__container {
@@ -88,56 +86,6 @@ const features = featuresData
 
       @media (max-width: 800px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-  }
-
-  .line-text-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Ensures the whole group stays centered */
-    width: 100%;
-    position: relative;
-    margin-bottom: 40px;
-
-    p {
-      /* Text Styles */
-      font-family: sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-
-      /* The Fix: Lock the width */
-      // flex: 0 1 800px;
-      flex-grow: 0;
-      flex-shrink: 0;
-      // width: 332px;
-    }
-
-    &::before {
-      content: '';
-      background-color: #fff;
-      height: 1px;
-      margin-right: 20px;
-      width: 100%; /* Take up remaining space to the left */
-    }
-
-    &::after {
-      content: '';
-      background-color: #fff;
-      height: 1px;
-      margin-left: 20px;
-      width: 100%; /* Take up remaining space to the left */
-    }
-
-    @media (max-width: 800px) {
-      p {
-        flex-grow: 1; /* Allow text to grow and take up available space */
-        flex-shrink: 1; /* Allow text to shrink if necessary */
-        width: auto; /* Let the width be determined by content and flex properties */
-      }
-      &::before,
-      &::after {
-        margin: 0 10px;
       }
     }
   }

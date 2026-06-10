@@ -81,7 +81,7 @@ onMounted(() => {
     // Starts at scale 0.8 and scrubs up to scale 1 as you scroll
     gsap.fromTo(
       imageRef.value,
-      { scale: 0.8 },
+      { scale: 1 },
       {
         scale: 1,
         ease: 'none', // Important for smooth scrolling math
@@ -118,11 +118,11 @@ function handleOnClick() {
   position: relative;
   justify-content: flex-end; // DEFAULT: Content on the RIGHT
   flex-direction: row;
-  height: 100vh;
+  height: 92vh;
   min-height: 620px;
   padding: 0;
   overflow: hidden;
-  background: $body-bg;
+  background: $night;
 
   // ALTERNATE LAYOUT: When class is .service-section--img-left
   &--img-left {
@@ -142,7 +142,7 @@ function handleOnClick() {
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: grayscale(90%);
+      // filter: grayscale(90%);
       display: block;
     }
 
@@ -152,7 +152,8 @@ function handleOnClick() {
       position: absolute;
       inset: 0;
       // Default (Content on Right): Dark on the right side
-      background: linear-gradient(to left, $body-bg 40%, transparent 60%);
+      // background: linear-gradient(to left, $body-bg 40%, transparent 60%);
+      // background: linear-gradient(to right, transparent 60%, $night 40%);
     }
   }
 
@@ -176,11 +177,6 @@ function handleOnClick() {
     flex-direction: column;
     gap: 20px;
     .wrapper {
-      // width: 100%;
-      // padding: 40px;
-      // display: flex;
-      // flex-direction: column;
-      // gap: 32px;
       @media (max-width: 800px) {
         padding: 0;
         color: red;
@@ -201,7 +197,8 @@ function handleOnClick() {
   .divider {
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: $champaign;
+    opacity: 0.5;
   }
 
   // ── Service list ────────────────────────────────────────
@@ -266,7 +263,7 @@ function handleOnClick() {
       width: 100%;
 
       &::after {
-        background: linear-gradient(to bottom, transparent 50%, rgba(2, 3, 3, 0.8) 100%) !important;
+        // background: linear-gradient(to bottom, transparent 50%, rgba(2, 3, 3, 0.8) 100%) !important;
       }
     }
 
@@ -288,7 +285,7 @@ function handleOnClick() {
 }
 
 .service-section--img-left .image::after {
-  background: linear-gradient(to right, rgba(2, 3, 3, 0.75) 0%, transparent 60%);
+  // background: linear-gradient(to right, rgba(2, 3, 3, 0.75) 0%, transparent 60%);
 }
 
 // ─── Animation (inherits from global .reveal-active) ─
