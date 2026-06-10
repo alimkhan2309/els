@@ -143,6 +143,7 @@ const submitForm = async (event) => {
       <form @submit="submitForm" novalidate>
         <div class="name">
           <input
+            id="firstName"
             type="text"
             v-model="firstName"
             placeholder="First Name"
@@ -150,6 +151,7 @@ const submitForm = async (event) => {
             required
           />
           <input
+            id="lastName"
             type="text"
             v-model="lastName"
             placeholder="Last Name"
@@ -158,9 +160,23 @@ const submitForm = async (event) => {
           />
         </div>
 
-        <input type="email" v-model="email" placeholder="Email" autocomplete="email" required />
+        <input
+          id="email"
+          type="email"
+          v-model="email"
+          placeholder="Email"
+          autocomplete="email"
+          required
+        />
 
-        <input type="tel" v-model="phone" placeholder="Phone Number" autocomplete="tel" required />
+        <input
+          id="phone"
+          type="tel"
+          v-model="phone"
+          placeholder="Phone Number"
+          autocomplete="tel"
+          required
+        />
 
         <label class="checkbox-field">
           <input type="checkbox" v-model="subscribeNewsletter" />
@@ -168,7 +184,7 @@ const submitForm = async (event) => {
         </label>
 
         <label class="checkbox-field privacy-field">
-          <input type="checkbox" v-model="acceptPrivacy" required />
+          <input id="acceptPrivacy" type="checkbox" v-model="acceptPrivacy" required />
           <span>
             I have read and accept the
             <a href="/els/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
