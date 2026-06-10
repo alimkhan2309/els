@@ -43,6 +43,7 @@ const features = featuresData
 .about-section {
   gap: 133px;
   background-color: $dark;
+  height: fit-content;
   .container {
     max-width: 908px;
     justify-content: center;

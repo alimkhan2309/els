@@ -227,6 +227,7 @@ const submitForm = async (event) => {
 <style lang="scss" scoped>
 @use '@/styles/variables' as *;
 .contact-section {
+  height: fit-content;
   gap: 133px;
   .container {
     max-width: 908px;

@@ -67,15 +67,18 @@ onUnmounted(() => {
   left: 0;
   z-index: 1000;
   background-color: rgba(246, 214, 179, 0.05);
+  background-color: $night;
   // backdrop-filter: blur(10px);
   transition: transform 0.28s ease;
 
   @media (max-width: 768px) {
-    padding: 20px 30px;
+    padding: 30px 30px;
+    height: 120px;
   }
 
   @media (max-width: 480px) {
     padding: 15px 20px;
+    background-color: $night;
   }
 
   &__logo img {
@@ -84,7 +87,7 @@ onUnmounted(() => {
     width: auto;
 
     @media (max-width: 480px) {
-      height: 80px;
+      height: 32px;
     }
   }
 
@@ -122,6 +125,7 @@ onUnmounted(() => {
       transition: max-height 0.3s ease;
       padding: 0;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
 
       &.active {
         max-height: 300px;
@@ -138,6 +142,10 @@ onUnmounted(() => {
           border-bottom: none;
         }
       }
+    }
+    @media (max-width: 480px) {
+      margin-top: 20px;
+      background-color: $night;
     }
 
     li a {
