@@ -48,9 +48,9 @@
             <p v-if="service.note" class="note">{{ service.note }}</p>
 
             <!-- CTA -->
-            <a :href="service.ctaLink" class="cta" @click.prevent="handleOnClick">
-              <button>{{ service.ctaLabel }}</button>
-            </a>
+            <button :href="service.ctaLink" class="cta" @click.prevent="handleOnClick">
+              {{ service.ctaLabel }}
+            </button>
           </div>
         </AnimateOnScroll>
       </div>
@@ -269,6 +269,23 @@ function handleOnClick() {
     flex-direction: column;
     gap: 20px;
 
+    .text-header {
+      max-width: 340px;
+      h1 {
+        font-size: clamp(36px, 5vw, 56px);
+      }
+    }
+    .wrapper {
+      width: 100%;
+      padding: 40px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+
     .description {
       font-weight: 300;
       line-height: 1.7;
@@ -422,18 +439,9 @@ function handleOnClick() {
 }
 
 .reveal-active {
-  .text-header {
-    max-width: 340px;
-    h1 {
-      font-size: clamp(36px, 5vw, 56px);
-    }
-  }
   .wrapper {
-    width: 100%;
-    padding: 40px 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+    opacity: 1;
+    transform: translateY(0);
     animation: fadeInSlideUp 0.6s ease forwards;
   }
 }
