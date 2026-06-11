@@ -3,6 +3,7 @@
     :class="['service-section', `service-section--img-${service.imagePosition}`, imageTypeClass]"
     :style="{ '--mobile-object-position': service.mobileObjectPosition || 'center' }"
     ref="sectionRef"
+    :id="`service-${service.id}`"
   >
     <!-- Image side -->
     <div class="image">
@@ -141,8 +142,8 @@ function handleOnClick() {
   position: relative;
   justify-content: flex-end;
   flex-direction: row;
-  height: 99vh;
   min-height: 620px;
+  height: 99vh;
   padding: 0;
   overflow: hidden;
   background: $dark;
@@ -165,6 +166,8 @@ function handleOnClick() {
     img {
       display: block;
       transition: transform 0.4s ease;
+      height: 100%;
+      width: 100%;
     }
 
     &::after {
@@ -188,10 +191,11 @@ function handleOnClick() {
   &--contain .image::after {
     background: linear-gradient(
       to left,
-      rgba($dark, 0.96) 0%,
-      rgba($dark, 0.85) 32%,
-      rgba($dark, 0.4) 65%,
-      rgba($dark, 0.05) 100%
+      rgba($dark, 1) 0%,
+      rgba($dark, 0.99) 32%,
+      rgba($dark, 0.85) 42%,
+      rgba($dark, 0.5) 78%,
+      rgba($dark, 0.4) 100%
     );
   }
 
@@ -199,43 +203,54 @@ function handleOnClick() {
   &--contain.service-section--img-left .image::after {
     background: linear-gradient(
       to right,
-      rgba($dark, 0.96) 0%,
-      rgba($dark, 0.85) 32%,
-      rgba($dark, 0.4) 65%,
-      rgba($dark, 0.05) 100%
+      rgba($dark, 0) 0%,
+      rgba($dark, 0.1) 35%,
+      rgba($dark, 0.5) 67%,
+      rgba($dark, 0.85) 100%
     );
   }
 
   /* Framed product / portrait shots that already sit on a dark background.
-     Contain at a sensible size and place on the image side. The same
-     gradient overlay as --cover is applied (it's just shades of $dark,
-     so it sits harmlessly behind the image too) for visual consistency. */
+     The image box itself is restricted to one half of the section (the
+     "image side") and the <img> is always centered inside that box via
+     flex - regardless of the image's natural size or aspect ratio. This
+     means no per-image padding/positioning tweaks are ever needed. */
   &--contain .image {
     display: flex;
     align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    width: 50%;
 
     img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
+      // width: auto;
+      // height: auto;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      padding: 0;
     }
   }
 
+  // imagePosition: "right" -> content is on the right, image sits in the
+  // left half of the section.
   &--contain.service-section--img-right .image {
-    justify-content: flex-start;
-    padding-left: 4%;
+    left: 0;
+    right: auto;
   }
 
+  // imagePosition: "left" -> content is on the left, image sits in the
+  // right half of the section.
   &--contain.service-section--img-left .image {
-    justify-content: flex-end;
-    padding-right: 4%;
+    right: 0;
+    left: auto;
   }
 
   /* ------------------------------------------------------------ */
   /* Content layer                                                  */
   /* ------------------------------------------------------------ */
+
   .content {
     position: relative;
     z-index: 1;
@@ -320,15 +335,15 @@ function handleOnClick() {
   /* ------------------------------------------------------------ */
   @media (max-width: 1000px) {
     flex-direction: column;
-    height: auto;
-    min-height: unset;
+    height: 80vh;
+    // min-height: unset;
 
     .image {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 420px;
+      // height: 420px;
       display: block; // reset the flex-centering used for --contain on desktop
       padding: 0;
 
@@ -337,23 +352,29 @@ function handleOnClick() {
         height: 100%;
         max-width: none;
         max-height: none;
-        object-fit: cover;
+        // object-fit: cover;
         object-position: var(--mobile-object-position, center);
       }
     }
 
-    // Flat overlay everywhere on mobile - no gradient, regardless of image type
+    // Flat overlay everywhere on mobile - no gradient, regardless of image
+    // type or imagePosition. All four selectors are listed explicitly so
+    // each one matches (or beats) the specificity of its desktop gradient
+    // counterpart - otherwise the higher-specificity img-left gradient
+    // rules above would still win on mobile.
     &--cover .image::after,
-    &--contain .image::after {
+    &--contain .image::after,
+    &--cover.service-section--img-left .image::after,
+    &--contain.service-section--img-left .image::after {
       content: '';
-      background: rgba($dark, 0.55);
+      background: rgba($dark, 0.75);
     }
 
     .content {
       position: relative;
       z-index: 2;
       width: 100%;
-      padding: 220px 24px 40px;
+      padding: 60px 24px 40px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -367,6 +388,8 @@ function handleOnClick() {
   }
 
   @media (max-width: 800px) {
+    height: fit-content;
+    padding: 40px 0;
     .inner {
       padding: 24px 16px;
       align-items: center;

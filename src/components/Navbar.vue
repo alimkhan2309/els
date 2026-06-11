@@ -1,11 +1,11 @@
 <template>
-  <nav class="navbar" :class="{ 'navbar--hidden': isHidden }">
-    <router-link to="/" class="navbar__logo" @click="menuOpen = false">
+  <nav class="navbar" :class="{ 'navbar--hidden': isHidden, 'navbar--scrolled': isScrolled }">
+    <router-link to="/els/" class="navbar__logo" @click="menuOpen = false">
       <img src="/img/test2.png" alt="Clinique La Prairie Logo" />
     </router-link>
     <ul class="navbar__links" :class="{ active: menuOpen }">
       <li><a href="#about" @click="menuOpen = false">About</a></li>
-      <li><a href="#services" @click="menuOpen = false">Services</a></li>
+      <li><a href="#service-injectables" @click="menuOpen = false">Services</a></li>
       <li><a href="#contact" @click="menuOpen = false">Contact</a></li>
       <!-- <li><router-link to="/privacy" @click="menuOpen = false">Privacy Policy</router-link></li>
       <li>
@@ -26,10 +26,13 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const menuOpen = ref(false)
 const isHidden = ref(false)
+const isScrolled = ref(false)
 const lastScrollY = ref(0)
 
 const handleScroll = () => {
   const current = window.pageYOffset || document.documentElement.scrollTop
+  isScrolled.value = current > 0
+
   if (menuOpen.value) {
     isHidden.value = false
     lastScrollY.value = current
@@ -45,6 +48,7 @@ const handleScroll = () => {
 
 onMounted(() => {
   lastScrollY.value = window.pageYOffset || 0
+  isScrolled.value = lastScrollY.value > 0
   window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
@@ -66,10 +70,13 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(246, 214, 179, 0.05);
-  background-color: $night;
-  // backdrop-filter: blur(10px);
+  background-color: transparent;
   transition: transform 0.28s ease;
+
+  &.navbar--scrolled,
+  &.navbar--scrolled {
+    background-color: $night;
+  }
 
   @media (max-width: 768px) {
     padding: 30px 30px;

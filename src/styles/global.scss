@@ -124,6 +124,11 @@ button {
       animation: fadeInSlideLeft 0.7s ease-in-out both;
       animation-delay: 0.2s;
     }
+    @media (max-width: 800px) {
+      h1 {
+        text-align: center !important;
+      }
+    }
   }
   .text-description {
     p {

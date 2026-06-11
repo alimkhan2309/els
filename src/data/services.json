@@ -5,7 +5,7 @@
     "titleLine1": "Precision",
     "titleLine2": "Redefined",
     "description": "Our expert injectors blend medical science with aesthetic artistry — delivering natural-looking results tailored to your unique facial anatomy.",
-    "image": "/images/service-injectables3.png",
+    "image": "/images/service-injectables4.png",
     "imagePosition": "left",
     "services": [
       { "name": "Botox (Full Face / 3 zones)", "price": "From 1,600 AED" },
@@ -23,7 +23,7 @@
     "titleLine1": "Clinical",
     "titleLine2": "Facial Tech",
     "description": "Our holistic approach to health and wellness combines evidence-based medicine with cutting-edge technology for visible, lasting skin transformation.",
-    "image": "/images/service-facial.jpg",
+    "image": "/images/service-facial2.jpg",
     "imagePosition": "right",
     "services": [
       { "name": "Hydrafacial Platinum (Cleanse + Peel + Hydrate)", "price": "From 850 AED" },
