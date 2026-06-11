@@ -90,11 +90,11 @@ onUnmounted(() => {
 
   &__logo img {
     fill: white;
-    height: 60px;
+    height: 80px;
     width: auto;
 
     @media (max-width: 480px) {
-      height: 32px;
+      height: 64px;
     }
   }
 

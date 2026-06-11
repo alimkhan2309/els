@@ -165,7 +165,7 @@ function handleOnClick() {
 
     img {
       display: block;
-      transition: transform 0.4s ease;
+      // transition: transform 0.4s ease;
       height: 100%;
       width: 100%;
     }
@@ -312,7 +312,7 @@ function handleOnClick() {
 
   .note {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
+    color: $off-white;
     font-style: italic;
     line-height: 1.5;
   }
