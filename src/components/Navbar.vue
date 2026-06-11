@@ -94,7 +94,7 @@ onUnmounted(() => {
     width: auto;
 
     @media (max-width: 480px) {
-      height: 64px;
+      height: 50px;
     }
   }
 
@@ -180,8 +180,8 @@ onUnmounted(() => {
     }
 
     span {
-      width: 25px;
-      height: 3px;
+      width: 40px;
+      height: 2px;
       background-color: $text-color;
       margin: 5px 0;
       transition: all 0.3s ease;

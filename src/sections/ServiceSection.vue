@@ -271,8 +271,29 @@ function handleOnClick() {
 
     .text-header {
       max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      line-height: 1.12;
+
       h1 {
         font-size: clamp(36px, 5vw, 56px);
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        margin: 0;
+        padding: 0;
+        font-family: 'Cormorant Garamond', serif;
+      }
+
+      h1:first-child {
+        text-align: left;
+      }
+
+      h1:last-child {
+        text-align: right;
+        font-style: italic;
+        align-self: flex-end;
+        max-width: 90%;
       }
     }
     .wrapper {
@@ -409,16 +430,32 @@ function handleOnClick() {
     padding: 40px 0;
     .inner {
       padding: 24px 16px;
-      align-items: center;
 
       .text-header {
         width: 100%;
-        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
         h1 {
-          width: 100%;
-          font-size: clamp(26px, 8vw, 46px);
+          font-size: clamp(28px, 9vw, 48px);
+          line-height: 1.15;
+          font-weight: 400;
+          letter-spacing: -0.5px;
           padding: 0;
+          margin: 0;
+        }
+
+        h1:first-child {
+          text-align: left;
+          font-family: 'Cormorant Garamond', serif;
+        }
+
+        h1:last-child {
+          text-align: right;
+          font-style: italic;
+          font-family: 'Cormorant Garamond', serif;
+          align-self: flex-end;
         }
       }
     }
