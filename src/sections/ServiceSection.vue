@@ -176,12 +176,6 @@ function handleOnClick() {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    .wrapper {
-      @media (max-width: 800px) {
-        padding: 0;
-        color: red;
-      }
-    }
 
     // ── Description ─────────────────────────────────────────
     .description {
@@ -276,6 +270,32 @@ function handleOnClick() {
     .inner {
       padding: 32px 24px;
       max-width: 800px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .inner {
+      padding: 24px 16px;
+      align-items: center;
+
+      .text-header {
+        max-width: 100%;
+        align-items: center;
+
+        h1 {
+          width: 50%;
+        }
+        // second title
+        h1:nth-child(2) {
+          align-self: right;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .inner {
+      padding: 0;
     }
   }
 }

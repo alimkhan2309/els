@@ -44,6 +44,18 @@ const features = featuresData
   gap: 133px;
   background-color: $dark;
   height: fit-content;
+  padding-top: 190px;
+  padding-bottom: 190px;
+
+  @media (max-width: 600px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  @media (max-width: 400px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .container {
     max-width: 908px;
     justify-content: center;
