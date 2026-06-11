@@ -2,7 +2,7 @@
   <div class="video-background-container">
     <!-- The native video element acts as the background layer -->
     <video autoplay loop muted playsinline class="background-video" preload="metadata">
-      <source :src="`${baseUrl}video/background-video.mp4`" type="video/mp4" />
+      <source :src="`${baseUrl}video/background-video2.mp4`" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 

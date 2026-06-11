@@ -40,8 +40,9 @@
     "titleLine1": "Effortless",
     "titleLine2": "Smoothness",
     "description": "State-of-the-art laser technology delivers permanent hair reduction with precision — safe for all skin types, performed by DHA-licensed specialists.",
-    "image": "/images/service-laser5.jpg",
+    "image": "/images/laser.png",
     "imagePosition": "left",
+    "imageFit": "contain",
     "services": [
       { "name": "Full Body (Female)", "price": "From 1,200 AED" },
       { "name": "Full Body (Male)", "price": "From 1,800 AED" },
@@ -58,7 +59,7 @@
     "titleLine1": "Restore &",
     "titleLine2": "Revitalise",
     "description": "Harness your body's own regenerative power. Our PRP and IV wellness protocols are designed to rejuvenate from within — skin, scalp, and cellular health.",
-    "image": "/images/service-prp10.png",
+    "image": "/images/service-prp.png",
     "imagePosition": "right",
     "services": [
       { "name": "PRP Therapy (Face Rejuvenation)", "price": "From 900 AED" },
@@ -74,8 +75,9 @@
     "titleLine1": "Sculpt Your",
     "titleLine2": "Ideal Form",
     "description": "Non-invasive body contouring powered by electromagnetic muscle stimulation — build, tone, and transform without surgery or downtime.",
-    "image": "/images/service-body2.jpg",
+    "image": "/images/sculpting.png",
     "imagePosition": "left",
+    "imageFit": "contain",
     "services": [
       { "name": "Embosculpt (1 session - 30 min)", "price": "From 900 AED" },
       { "name": "Body Transformation Package (10 sessions)", "price": "From 7,500 AED" }
@@ -89,7 +91,7 @@
     "titleLine1": "Your Skin,",
     "titleLine2": "Understood",
     "description": "Every great result begins with listening. Meet our DHA-licensed dermatologists for a personalised assessment — supported by 3D Visia skin analysis technology.",
-    "image": "/images/service-consult4.png",
+    "image": "/images/service-consult5.png",
     "imagePosition": "right",
     "services": [
       { "name": "Initial Consultation with Dermatologist", "price": "350 AED*" },

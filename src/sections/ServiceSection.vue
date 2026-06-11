@@ -1,7 +1,7 @@
 <template>
   <section
-    class="service-section"
-    :class="`service-section--img-${service.imagePosition}`"
+    :class="['service-section', `service-section--img-${service.imagePosition}`, imageTypeClass]"
+    :style="{ '--mobile-object-position': service.mobileObjectPosition || 'center' }"
     ref="sectionRef"
   >
     <!-- Image side -->
@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimateOnScroll from '../components/AnimateOnScroll.vue'
@@ -70,105 +70,182 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  // Kept for backwards compatibility with the parent component.
+  // Layout is now fully data-driven via service.imagePosition / service.imageFit,
+  // so these are no longer used internally.
+  index: {
+    type: Number,
+    required: false,
+    default: 0,
+  },
+  isLast: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 })
+
+// 'contain'  -> framed product / portrait shots that already sit on a dark
+//               background (e.g. laser.png, sculpting.png). These are sized
+//               down and placed on the image side instead of stretching to
+//               fill the whole section.
+// 'cover'    -> full-width photos that should fill the section as a backdrop.
+// Default is 'cover' unless the service explicitly opts into 'contain'.
+const imageTypeClass = computed(() => {
+  return props.service.imageFit === 'contain'
+    ? 'service-section--contain'
+    : 'service-section--cover'
+})
+
 const baseUrl = import.meta.env.BASE_URL // Ensures correct path resolution in production
 const sectionRef = ref(null)
 const imageRef = ref(null)
 let ctx = null
 
-onMounted(() => {
-  ctx = gsap.context(() => {
-    // Starts at scale 0.8 and scrubs up to scale 1 as you scroll
-    gsap.fromTo(
-      imageRef.value,
-      { scale: 1 },
-      {
-        scale: 1,
-        ease: 'none', // Important for smooth scrolling math
-        scrollTrigger: {
-          trigger: sectionRef.value,
-          start: 'top bottom', // Start when top of section hits bottom of viewport
-          end: 'bottom top', // End when bottom of section hits top of viewport
-          scrub: true, // Binds the animation directly to the scrollbar
-        },
-      },
-    )
-  })
-})
+// onMounted(() => {
+//   ctx = gsap.context(() => {
+//     gsap.fromTo(
+//       imageRef.value,
+//       { scale: 1 },
+//       {
+//         scale: 1.12,
+//         ease: 'none',
+//         scrollTrigger: {
+//           trigger: sectionRef.value,
+//           start: 'top bottom',
+//           end: 'bottom top',
+//           scrub: true,
+//         },
+//       },
+//     )
+//   })
+// })
 
 onBeforeUnmount(() => {
-  if (ctx) ctx.revert() // Cleans up GSAP instances to prevent memory leaks
+  if (ctx) ctx.revert()
 })
 
-// Smooth scroll to contact form when CTA is clicked
 function handleOnClick() {
-  // redirect to #form
   const formSection = document.getElementById('contact')
   if (formSection) {
     formSection.scrollIntoView({ behavior: 'smooth' })
   }
 }
 </script>
+
 <style lang="scss" scoped>
 @use '@/styles/variables' as *;
 
-// ─── Layout ────────────────────────────────────────────────
 .service-section {
   display: flex;
   position: relative;
-  justify-content: flex-end; // DEFAULT: Content on the RIGHT
+  justify-content: flex-end;
   flex-direction: row;
   height: 99vh;
   min-height: 620px;
   padding: 0;
   overflow: hidden;
-  background: $night;
+  background: $dark;
 
-  // ALTERNATE LAYOUT: When class is .service-section--img-left
   &--img-left {
-    justify-content: flex-start; // FIXED TYPO: Content moves to the LEFT
+    justify-content: flex-start;
   }
 
-  // ── Image ───────────────────────────────────────────────
+  /* ------------------------------------------------------------ */
+  /* Image layer                                                    */
+  /* ------------------------------------------------------------ */
   .image {
-    position: absolute; // Pulled out of flow to act as a full background
+    position: absolute;
     inset: 0;
     width: 100%;
-    // height: 100%;
+    height: 100%;
     z-index: 0;
+    pointer-events: none;
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      // filter: grayscale(90%);
       display: block;
+      transition: transform 0.4s ease;
     }
 
-    // Dark gradient toward content side to make text legible
     &::after {
       content: '';
       position: absolute;
       inset: 0;
-      // Default (Content on Right): Dark on the right side
-      // background: linear-gradient(to left, $body-bg 40%, transparent 60%);
-      // background: linear-gradient(to right, transparent 60%, $night 40%);
+      pointer-events: none;
     }
   }
 
-  // ── Content wrapper ─────────────────────────────────────
+  /* Full-bleed photos: cover the whole section, single smooth gradient
+     fading toward the content side so text stays legible. */
+  &--cover .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  &--cover .image::after,
+  &--contain .image::after {
+    background: linear-gradient(
+      to left,
+      rgba($dark, 0.96) 0%,
+      rgba($dark, 0.85) 32%,
+      rgba($dark, 0.4) 65%,
+      rgba($dark, 0.05) 100%
+    );
+  }
+
+  &--cover.service-section--img-left .image::after,
+  &--contain.service-section--img-left .image::after {
+    background: linear-gradient(
+      to right,
+      rgba($dark, 0.96) 0%,
+      rgba($dark, 0.85) 32%,
+      rgba($dark, 0.4) 65%,
+      rgba($dark, 0.05) 100%
+    );
+  }
+
+  /* Framed product / portrait shots that already sit on a dark background.
+     Contain at a sensible size and place on the image side. The same
+     gradient overlay as --cover is applied (it's just shades of $dark,
+     so it sits harmlessly behind the image too) for visual consistency. */
+  &--contain .image {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &--contain.service-section--img-right .image {
+    justify-content: flex-start;
+    padding-left: 4%;
+  }
+
+  &--contain.service-section--img-left .image {
+    justify-content: flex-end;
+    padding-right: 4%;
+  }
+
+  /* ------------------------------------------------------------ */
+  /* Content layer                                                  */
+  /* ------------------------------------------------------------ */
   .content {
-    position: relative; // Tells the browser to respect z-index layering
-    z-index: 1; // Places text safely on top of the background image
-    flex: 0 0 50%; // Restricts content to exactly half the screen width
+    position: relative;
+    z-index: 1;
+    flex: 0 0 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
   }
 
-  // ── Dashed inner box ──────────────
   .inner {
     width: 100%;
     max-width: 559px;
@@ -177,9 +254,7 @@ function handleOnClick() {
     flex-direction: column;
     gap: 20px;
 
-    // ── Description ─────────────────────────────────────────
     .description {
-      // font-size: 13px;
       font-weight: 300;
       line-height: 1.7;
       color: $text-color;
@@ -187,14 +262,12 @@ function handleOnClick() {
     }
   }
 
-  // ── Divider ─────────────────────────────────────────────
   .divider {
     width: 100%;
     height: 1px;
     background: $rose;
   }
 
-  // ── Service list ────────────────────────────────────────
   .list {
     list-style: none;
     display: flex;
@@ -213,7 +286,6 @@ function handleOnClick() {
   }
 
   .list-name {
-    color: rgba(255, 255, 255, 0.85);
     color: $text-color;
   }
 
@@ -223,7 +295,6 @@ function handleOnClick() {
     color: $off-white;
   }
 
-  // ── Note ────────────────────────────────────────────────
   .note {
     font-size: 11px;
     color: rgba(255, 255, 255, 0.4);
@@ -231,7 +302,6 @@ function handleOnClick() {
     line-height: 1.5;
   }
 
-  // ── CTA ─────────────────────────────────────────────────
   .cta {
     display: inline-block;
     text-decoration: none;
@@ -245,31 +315,54 @@ function handleOnClick() {
     }
   }
 
-  // ── Responsive ──────────────────────────────────────────
+  /* ------------------------------------------------------------ */
+  /* Mobile - image becomes a flat-overlaid background banner       */
+  /* ------------------------------------------------------------ */
   @media (max-width: 1000px) {
-    flex-direction: column !important;
+    flex-direction: column;
     height: auto;
     min-height: unset;
 
     .image {
-      position: relative; // Return to normal flow so image stacks above text on mobile
-      flex: 0 0 300px;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 420px;
+      display: block; // reset the flex-centering used for --contain on desktop
+      padding: 0;
 
-      &::after {
-        // background: linear-gradient(to bottom, transparent 50%, rgba(2, 3, 3, 0.8) 100%) !important;
+      img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        object-fit: cover;
+        object-position: var(--mobile-object-position, center);
       }
     }
 
+    // Flat overlay everywhere on mobile - no gradient, regardless of image type
+    &--cover .image::after,
+    &--contain .image::after {
+      content: '';
+      background: rgba($dark, 0.55);
+    }
+
     .content {
-      flex: none;
+      position: relative;
+      z-index: 2;
       width: 100%;
-      padding: 40px 24px;
+      padding: 220px 24px 40px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
     }
 
     .inner {
       padding: 32px 24px;
-      max-width: 800px;
+      max-width: 900px;
+      width: 100%;
     }
   }
 
@@ -279,15 +372,13 @@ function handleOnClick() {
       align-items: center;
 
       .text-header {
-        max-width: 100%;
+        width: 100%;
         align-items: center;
 
         h1 {
-          width: 50%;
-        }
-        // second title
-        h1:nth-child(2) {
-          align-self: right;
+          width: 100%;
+          font-size: clamp(26px, 8vw, 46px);
+          padding: 0;
         }
       }
     }
@@ -295,21 +386,11 @@ function handleOnClick() {
 
   @media (max-width: 400px) {
     .inner {
-      padding: 0;
+      padding: 24px 12px;
     }
   }
 }
 
-.service-section--img-left {
-  justify-content: flex-start;
-}
-
-.service-section--img-left .image::after {
-  // background: linear-gradient(to right, rgba(35, 12, 17, 1) 20%, transparent 100%);
-  background: linear-gradient(to right, rgba(35, 12, 17, 0.8) 20%, transparent 100%);
-}
-
-// ─── Animation (inherits from global .reveal-active) ─
 .reveal-wrapper:not(.reveal-active) {
   .wrapper {
     opacity: 0;
@@ -331,7 +412,6 @@ function handleOnClick() {
     flex-direction: column;
     gap: 32px;
     animation: fadeInSlideUp 0.6s ease forwards;
-    // animation-delay: 0.3s;
   }
 }
 </style>

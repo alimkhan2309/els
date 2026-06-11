@@ -7,11 +7,11 @@ import VideoBackground from '../components/VideoBackground.vue'
   <VideoBackground>
     <section class="hero-section" id="home">
       <div class="container">
-        <AnimateOnScroll>
-          <div class="label-wrapper">
-            <!-- <p class="tag">ELS PREMIER POLYCLINIC</p> -->
-          </div>
-        </AnimateOnScroll>
+        <!-- <AnimateOnScroll> -->
+        <!-- <div class="label-wrapper"> -->
+        <!-- <p class="tag">ELS PREMIER POLYCLINIC</p> -->
+        <!-- </div> -->
+        <!-- </AnimateOnScroll> -->
         <AnimateOnScroll>
           <div class="text-header">
             <h1>ADVANCED MEDICAL AESTHETICS</h1>
@@ -78,7 +78,7 @@ import VideoBackground from '../components/VideoBackground.vue'
       font-family: sans-serif;
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 12px;
+      font-size: clamp(11px, 1.5vw, 13px);
 
       /* The Fix: Lock the width */
       // flex: 0 1 800px;
@@ -106,7 +106,7 @@ import VideoBackground from '../components/VideoBackground.vue'
     @media (max-width: 800px) {
       p {
         flex-grow: 1; /* Allow text to grow and take up available space */
-        flex-shrink: 1; /* Allow text to shrink if necessary */
+        // flex-shrink: 1; /* Allow text to shrink if necessary */
         width: auto; /* Let the width be determined by content and flex properties */
       }
       &::before,

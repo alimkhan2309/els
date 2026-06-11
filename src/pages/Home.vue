@@ -9,7 +9,13 @@ import services from '@/data/services.json'
 <template>
   <HeroSection />
   <AboutSection />
-  <ServiceSection v-for="service in services" :key="service.id" :service="service" />
+  <ServiceSection
+    v-for="(service, i) in services"
+    :key="service.id"
+    :service="service"
+    :index="i"
+    :is-last="i === services.length - 1"
+  />
   <ContactSection />
 </template>
 

@@ -128,7 +128,7 @@ const submitForm = async (event) => {
       <span class="tag-label">ARRANGE A BOOKING</span>
       <AnimateOnScroll>
         <div class="text-header">
-          <h1>PLEASE SEND US YOUR DETAILS</h1>
+          <h1>Contact Us</h1>
         </div>
       </AnimateOnScroll>
       <AnimateOnScroll>
@@ -231,7 +231,14 @@ const submitForm = async (event) => {
   gap: 133px;
   .container {
     max-width: 908px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .text-header h1 {
+      text-align: left;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.2;
+    }
   }
   .text-description {
     animation: fadeInUp 0.6s ease forwards;
