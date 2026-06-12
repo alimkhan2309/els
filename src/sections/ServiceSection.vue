@@ -146,7 +146,7 @@ function handleOnClick() {
   height: 99vh;
   padding: 0;
   overflow: hidden;
-  background: $dark;
+  background: $burgendy;
 
   &--img-left {
     justify-content: flex-start;
@@ -407,7 +407,7 @@ function handleOnClick() {
     &--cover.service-section--img-left .image::after,
     &--contain.service-section--img-left .image::after {
       content: '';
-      background: rgba($dark, 0.75);
+      background: rgba($burgendy, 0.75);
     }
 
     .content {
