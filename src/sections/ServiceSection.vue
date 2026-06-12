@@ -150,6 +150,7 @@ function handleOnClick() {
 
   &--img-left {
     justify-content: flex-start;
+    background-color: $burgendy;
   }
 
   /* ------------------------------------------------------------ */
@@ -191,11 +192,11 @@ function handleOnClick() {
   &--contain .image::after {
     background: linear-gradient(
       to left,
-      rgba($dark, 1) 0%,
-      rgba($dark, 0.99) 32%,
-      rgba($dark, 0.85) 42%,
-      rgba($dark, 0.5) 78%,
-      rgba($dark, 0.4) 100%
+      rgba($burgendy, 1) 0%,
+      rgba($burgendy, 0.99) 32%,
+      rgba($burgendy, 0.85) 42%,
+      rgba($burgendy, 0.5) 78%,
+      rgba($burgendy, 0.4) 100%
     );
   }
 
@@ -203,10 +204,10 @@ function handleOnClick() {
   &--contain.service-section--img-left .image::after {
     background: linear-gradient(
       to right,
-      rgba($dark, 0) 0%,
-      rgba($dark, 0.1) 35%,
-      rgba($dark, 0.5) 67%,
-      rgba($dark, 0.85) 100%
+      rgba($burgendy, 0) 0%,
+      rgba($burgendy, 0.1) 35%,
+      rgba($burgendy, 0.5) 67%,
+      rgba($burgendy, 0.85) 100%
     );
   }
 
@@ -282,7 +283,8 @@ function handleOnClick() {
         letter-spacing: -0.5px;
         margin: 0;
         padding: 0;
-        font-family: 'Cormorant Garamond', serif;
+        // font-family: 'Cormorant Garamond', serif;
+        font-family: 'Red Hat Display', sans-serif;
       }
 
       h1:first-child {

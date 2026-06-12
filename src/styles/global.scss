@@ -45,6 +45,7 @@ select {
 
 h1 {
   font-size: 52px;
+  // font-family: 'Red Hat Display', sans-serif;
 }
 
 section {
@@ -110,8 +111,8 @@ button {
       font-weight: 400;
       line-height: 1.25;
       // Add Cormorant Garamond font
-      font-family: 'Cormorant Garamond', serif;
-      // font-family: 'Red Hat Display', sans-serif;
+      // font-family: 'Cormorant Garamond', serif;
+      font-family: 'Red Hat Display', sans-serif;
     }
     & h1:first-child {
       text-align: left;

@@ -45,8 +45,9 @@
   width: 100%;
   height: fit-content;
   padding: 40px 20px;
-  background: rgba(35, 12, 17, 0.94);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  // background: rgba(35, 12, 17, 0.94);
+  background: $burgendy;
+  border-top: 1px solid $rose;
   color: $warm-white;
 
   .footer-container {

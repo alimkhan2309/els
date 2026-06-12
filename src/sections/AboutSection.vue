@@ -42,7 +42,7 @@ const features = featuresData
 @use '@/styles/variables' as *;
 .about-section {
   gap: 133px;
-  background-color: $dark;
+  background-color: $burgendy;
   height: fit-content;
   padding-top: 190px;
   padding-bottom: 190px;
